@@ -13,6 +13,7 @@ int add(t_obj **ref, int value) {
 	if(!(temp = (t_obj*)malloc(sizeof(t_obj))))
 		return (0);
 	temp->value = value;
+	// swap part
 	temp->next = (*ref);
 	(*ref) = temp;
 	return (1);
