@@ -9,20 +9,6 @@ struct s_list {
 };
 
 
-void reverse(t_list **ref) {
-	t_list *prev = NULL;
-	t_list *current = *ref;
-	t_list *next = NULL;
-
-	while(current) {
-		next = current->next;
-		current->next = prev; // reverse currnt ptr
-		prev = current; // move ptr to ahead
-		current = next;
-	}
-	(*ref) = prev;
-}
-
 int add(t_list **ref, int arg) {
 	t_list *temp;
 	temp = NULL;
@@ -41,9 +27,6 @@ t_list *header_ptr(t_list *ptr) {
 
 void navigate(t_list *p_list) {
 	t_list *header = header_ptr(p_list);
-	printf("header adress: %p\n",header);
-	printf("header arg: %i\n",header->arg);
-
 	printf("navite once\n");
 	while(header) {
 		printf("arg: %i\n",header->arg);
