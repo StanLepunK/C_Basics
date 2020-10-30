@@ -16,6 +16,7 @@ struct s_vec2 {
 t_vec2 *new_vec2() {
   t_vec2 *buf;
 
+  buf = NULL;
   if(!(buf = (t_vec2*)malloc(sizeof(t_vec2))))
     return (0);
   buf->size = 2;
@@ -23,7 +24,6 @@ t_vec2 *new_vec2() {
     free(buf);
     return (0);
   }
-
   return buf;
 }
 
